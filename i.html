@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amazon Affiliate Picks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Top Amazon Picks</h1>
+        <nav>
+            <a href="i.html">Products that help</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search products...">
+        </div>
+    </header>
+    <main id="product-list"></main>
+    <footer>
+        <p>&copy; 2025 Your Amazon Affiliate Site</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('searchInput').addEventListener('input', function() {
+            renderProducts(this.value);
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProducts('');
+        });
+    </script>
+</body>
+</html>
