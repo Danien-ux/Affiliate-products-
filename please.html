@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Manage Amazon Affiliate Products</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Panel</h1>
+        <nav>
+            <a href="please.html">Go to Visitor Page (please)</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="adminSearchInput" placeholder="Search products...">
+        </div>
+    </header>
+    <main>
+        <section>
+            <h2>Add New Product</h2>
+            <form id="add-product-form">
+                <label>
+                    Product Title:
+                    <input type="text" id="title" required>
+                </label>
+                <label>
+                    Image URL:
+                    <input type="url" id="image" required>
+                </label>
+                <label>
+                    Amazon URL (Affiliate link):
+                    <input type="url" id="amazonUrl" required>
+                </label>
+                <label>
+                    Description:
+                    <textarea id="description" required></textarea>
+                </label>
+                <button type="submit">Add Product</button>
+            </form>
+            <div id="success-message" style="display:none;">
+                <p>Product added!</p>
+            </div>
+        </section>
+        <section>
+            <h2>Manage Products</h2>
+            <div id="admin-product-list"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Your Amazon Affiliate Site</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('adminSearchInput').addEventListener('input', function() {
+            renderAdminProducts(this.value);
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            renderAdminProducts('');
+        });
+    </script>
+</body>
+</html>
